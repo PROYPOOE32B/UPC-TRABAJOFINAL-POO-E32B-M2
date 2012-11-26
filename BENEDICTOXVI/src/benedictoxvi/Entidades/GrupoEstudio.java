@@ -17,5 +17,54 @@ public class GrupoEstudio {
     private Date FechaInicio;
     private Date FechaFin;
     private String Estado;
+
+    public int getCodigoGrupoEstudio() {
+        return CodigoGrupoEstudio;
+    }
+
+    public void setCodigoGrupoEstudio(int CodigoGrupoEstudio) {
+        this.CodigoGrupoEstudio = CodigoGrupoEstudio;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
+    public Date getFechaInicio() {
+        return FechaInicio;
+    }
+
+    public void setFechaInicio(Date FechaInicio) {
+        this.FechaInicio = FechaInicio;
+    }
+
+    public Date getFechaFin() {
+        return FechaFin;
+    }
+
+    public void setFechaFin(Date FechaFin) {
+        this.FechaFin = FechaFin;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
+    
     
 }

@@ -8,6 +8,5 @@ package benedictoxvi.Entidades;
  *
  * @author milton
  */
-public class Instructor {
-    
+public class Instructor extends BasePersona {
 }

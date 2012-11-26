@@ -16,4 +16,5 @@ public class GrupoEstudioDetalla {
     private Date FechaFin;
     private ArrayList<Curso> Curso;
     
+    
 }
