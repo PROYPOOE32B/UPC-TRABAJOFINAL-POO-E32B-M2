@@ -4,6 +4,7 @@
  */
 package benedictoxvi.Entidades;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,9 +15,11 @@ public class GrupoEstudio {
     private int CodigoGrupoEstudio;
     private String Nombre;
     private String Descripcion;
+    private String NombreAcademia;
     private Date FechaInicio;
     private Date FechaFin;
     private String Estado;
+    private ArrayList<GrupoEstudioDetale> Detalle;
 
     public int getCodigoGrupoEstudio() {
         return CodigoGrupoEstudio;
@@ -42,6 +45,14 @@ public class GrupoEstudio {
         this.Descripcion = Descripcion;
     }
 
+    public String getNombreAcademia() {
+        return NombreAcademia;
+    }
+
+    public void setNombreAcademia(String NombreAcademia) {
+        this.NombreAcademia = NombreAcademia;
+    }
+    
     public Date getFechaInicio() {
         return FechaInicio;
     }
@@ -65,6 +76,14 @@ public class GrupoEstudio {
     public void setEstado(String Estado) {
         this.Estado = Estado;
     }
-    
+
+    public ArrayList<GrupoEstudioDetale> getDetalle() {
+        return Detalle;
+    }
+
+    public void setDetalle(ArrayList<GrupoEstudioDetale> Detalle) {
+        this.Detalle = Detalle;
+    }
+ 
     
 }

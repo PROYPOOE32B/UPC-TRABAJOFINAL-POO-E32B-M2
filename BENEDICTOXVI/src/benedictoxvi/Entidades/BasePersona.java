@@ -12,6 +12,7 @@ public class BasePersona {
     private int codigo;
     private String nombre;
     private String apellidoPaterno;
+    private String apellidoMaterno;
     private String sexo;
     private String nroDocumento;
     private String tipoDocumento;
@@ -80,6 +81,11 @@ public class BasePersona {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+    
+    public String getApellidosNombres()
+    {
+        return this.apellidoPaterno + " " + this.apellidoMaterno + ", " + this.nombre;
     }
 
 }

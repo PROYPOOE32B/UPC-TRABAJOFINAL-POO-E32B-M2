@@ -11,7 +11,7 @@ package benedictoxvi.Entidades;
 public class Local {
     private int codigoLocal;
     private String nombre;
-    private String Direccion;
+    private String direccion;
     private String ubicacionGoogleMaps;
 
     public int getCodigoLocal() {
@@ -31,11 +31,11 @@ public class Local {
     }
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getUbicacionGoogleMaps() {

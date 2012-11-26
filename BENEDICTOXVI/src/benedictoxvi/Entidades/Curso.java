@@ -9,23 +9,34 @@ package benedictoxvi.Entidades;
  * @author milton
  */
 public class Curso {
-    private String CodigoCurso;
-    private String NombreCurso;
+    private String codigoCurso;
+    private String nombreCurso;
+    private String syllabus;
 
     public String getCodigoCurso() {
-        return CodigoCurso;
+        return codigoCurso;
     }
 
     public void setCodigoCurso(String CodigoCurso) {
-        this.CodigoCurso = CodigoCurso;
+        this.codigoCurso = CodigoCurso;
     }
 
     public String getNombreCurso() {
-        return NombreCurso;
+        return nombreCurso;
     }
 
     public void setNombreCurso(String NombreCurso) {
-        this.NombreCurso = NombreCurso;
+        this.nombreCurso = NombreCurso;
     }
+
+    public String getSyllabus() {
+        return syllabus;
+    }
+
+    public void setSyllabus(String syllabus) {
+        this.syllabus = syllabus;
+    }
+    
+    
             
 }
