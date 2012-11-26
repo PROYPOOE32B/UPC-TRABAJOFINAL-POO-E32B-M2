@@ -28,28 +28,55 @@ public Result GuardarGrupoEstudio(GrupoEstudio pGrupoEstudio)
     StringBuilder sb = new StringBuilder();
     Result rs = new Result();
     
-    sb.append((pGrupoEstudio.getNombre().isEmpty() || pGrupoEstudio.getNombre() == null)? "Debe ingresar el nombre del grupo de estudio.": "");
-    sb.append((pGrupoEstudio.getDescripcion().isEmpty() || pGrupoEstudio.getDescripcion() == null)? "Debe ingresar la descripción del grupo de estudio.": "");
-    sb.append((pGrupoEstudio.getNombreAcademia().isEmpty() || pGrupoEstudio.getNombreAcademia() == null)? "Debe ingresar la Academia del grupo de estudio.": "");
+    sb.append((pGrupoEstudio.getNombre() == null || pGrupoEstudio.getNombre().isEmpty())? "Debe ingresar el nombre del grupo de estudio.": "");
+    sb.append((pGrupoEstudio.getDescripcion() == null || pGrupoEstudio.getDescripcion().isEmpty())? "Debe ingresar la descripción del grupo de estudio.": "");
+    sb.append((pGrupoEstudio.getNombreAcademia() == null || pGrupoEstudio.getNombreAcademia().isEmpty())? "Debe ingresar la Academia del grupo de estudio.": "");
     
     for(GrupoEstudioDetale detalle : pGrupoEstudio.getDetalle())
     {
         //Validacion del curso
-        sb.append((detalle.getCurso().getCodigoCurso().isEmpty() || detalle.getCurso().getCodigoCurso()== null)?"Debe ingresar el código del curso": "");
-        sb.append((detalle.getCurso().getNombreCurso().isEmpty() || detalle.getCurso().getNombreCurso()== null)?"Debe ingresar el nombre del curso": "");
-        sb.append((detalle.getCurso().getSyllabus().isEmpty() || detalle.getCurso().getSyllabus()== null)?"Debe ingresar la url del syllabus": "");
+        if (detalle.getCurso() != null)
+        {
+            sb.append((detalle.getCurso().getCodigoCurso()== null || detalle.getCurso().getCodigoCurso().isEmpty())?"Debe ingresar el código del curso": "");
+            sb.append((detalle.getCurso().getNombreCurso()== null || detalle.getCurso().getNombreCurso().isEmpty())?"Debe ingresar el nombre del curso": "");
+            sb.append((detalle.getCurso().getSyllabus()== null || detalle.getCurso().getSyllabus().isEmpty())?"Debe ingresar la url del syllabus": "");
+        }
+        else
+        {
+            sb.append("No se ha especificado un curso válido.");
+        }
        
         //Validacion del instructor
-        sb.append((detalle.getInstructor().getCodigo() <= 0)?"Debe ingresar el nombre del curso": "");
-        sb.append((detalle.getInstructor().getApellidosNombres().isEmpty() || detalle.getInstructor().getApellidosNombres() == null )?"Debe ingresar el nombre del instructor": "");
+        if(detalle.getInstructor() != null)
+        {
+            sb.append((detalle.getInstructor().getCodigo() <= 0)?"Debe ingresar el nombre del curso": "");
+            sb.append((detalle.getInstructor().getApellidosNombres() == null || detalle.getInstructor().getApellidosNombres().isEmpty())?"Debe ingresar el nombre del instructor": "");        
+        }
+        else
+        {
+            sb.append("No se ha especificado un instructor.");
+        }
+
 
         //Validacion del local
-        sb.append((detalle.getLocal().getCodigoLocal() <= 0)?"Debe ingresar el código del local": "");
-        sb.append((detalle.getLocal().getNombre().isEmpty() || detalle.getLocal().getNombre() == null)?"Debe ingresar el nombre del local": "");
+        if (detalle.getLocal() != null)
+        {
+            sb.append((detalle.getLocal().getCodigoLocal() <= 0)?"Debe ingresar el código del local": "");
+            sb.append((detalle.getLocal().getNombre() == null || detalle.getLocal().getNombre().isEmpty())?"Debe ingresar el nombre del local": "");        
+        }
+        else
+        {
+            sb.append("No se ha especificado un local válido.");
+        }
+
         
     }
         
-    if (sb.length() > 0) rs.SetResult(ResultType.Error, sb.toString());
+    if (sb.length() > 0) 
+    {
+        rs.SetResult(ResultType.Error, sb.toString());
+        return rs;
+    }
     
     BDGrupoEstudio bd = new BDGrupoEstudio();
     return bd.GuardarGrupoEstudio(pGrupoEstudio);    

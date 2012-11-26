@@ -9,32 +9,38 @@ package benedictoxvi.Entidades;
  * @author milton
  */
 public class Aula {
-     private int CodigoAula;
-     private String Descripcion;
-     private int Capacidad;
+     private int codigoAula;
+     private String descripcion;
+     private int capacidad;
 
+    public Aula(int pCodigoAula, String pDescripcion, int pCapacidad)
+    {
+        this.codigoAula = pCodigoAula;
+        this.descripcion = pDescripcion;
+        this.capacidad = pCapacidad;
+    }
     public int getCodigoAula() {
-        return CodigoAula;
+        return codigoAula;
     }
 
     public void setCodigoAula(int CodigoAula) {
-        this.CodigoAula = CodigoAula;
+        this.codigoAula = CodigoAula;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String Descripcion) {
-        this.Descripcion = Descripcion;
+        this.descripcion = Descripcion;
     }
 
     public int getCapacidad() {
-        return Capacidad;
+        return capacidad;
     }
 
     public void setCapacidad(int Capacidad) {
-        this.Capacidad = Capacidad;
+        this.capacidad = Capacidad;
     }
      
 }

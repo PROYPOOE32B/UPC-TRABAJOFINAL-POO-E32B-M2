@@ -4,8 +4,11 @@
  */
 package benedictoxvi.Logica;
 
+import benedictoxvi.Entidades.Aula;
 import benedictoxvi.Entidades.GrupoEstudio;
+import benedictoxvi.Entidades.GrupoEstudioDetale;
 import benedictoxvi.Util.Result;
+import benedictoxvi.Util.ResultType;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -60,13 +63,39 @@ public class BLGrupoEstudioTest {
     @Test
     public void testGuardarGrupoEstudio() {
         System.out.println("GuardarGrupoEstudio");
-        GrupoEstudio pGrupoEstudio = null;
+        GrupoEstudio pGrupoEstudio = new GrupoEstudio();
+        //Grupo de estudio
+        pGrupoEstudio.setCodigoGrupoEstudio(1);
+        pGrupoEstudio.setNombre("Ciclo Verano Aduni 2012");
+        
+        GrupoEstudioDetale detalle1 = new GrupoEstudioDetale();
+        detalle1.setAula(new Aula(1, "Aula 402", 20));
+        
+        ArrayList<GrupoEstudioDetale> detalle = new ArrayList<GrupoEstudioDetale>();
+        detalle.add(detalle1);
+        
+        pGrupoEstudio.setDetalle(detalle);
+        
         BLGrupoEstudio instance = new BLGrupoEstudio();
+        
+        
+        
         Result expResult = null;
         Result result = instance.GuardarGrupoEstudio(pGrupoEstudio);
-        assertEquals(expResult, result);
+        
+        if(result.getTipo() ==  ResultType.Ok )
+        {
+           assertEquals(0, 0);
+            System.out.println(result.getMensaje());         
+        }
+        else
+        {
+            fail(result.getMensaje());            
+        }
+        
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        
     }
 
     /**
