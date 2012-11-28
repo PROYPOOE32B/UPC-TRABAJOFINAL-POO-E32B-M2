@@ -8,17 +8,28 @@ package benedictoxvi.Entidades;
  *
  * @author milton
  */
-public class BasePersona {
-    private int codigo;
-    private String nombre;
-    private String apellidoPaterno;
-    private String apellidoMaterno;
-    private String sexo;
-    private String nroDocumento;
-    private String tipoDocumento;
-    private String estadoCivil;
-    private boolean estado;
+abstract class BasePersona {
+    protected int codigo;
+    protected String nombre;
+    protected String apellidoPaterno;
+    protected String apellidoMaterno;
+    protected String sexo;
+    protected String nroDocumento;
+    protected String tipoDocumento;
+    protected String estadoCivil;
+    protected boolean estado;
 
+    public BasePersona()
+    {}
+    
+    public BasePersona(int pCodigo, String pNombre, String pApellidoPaterno, String pApellidoMaterno)
+    {
+        this.codigo = pCodigo;
+        this.nombre = pNombre;
+        this.apellidoPaterno = pApellidoPaterno;
+        this.apellidoMaterno = pApellidoMaterno; 
+    }
+    
     public int getCodigo() {
         return codigo;
     }

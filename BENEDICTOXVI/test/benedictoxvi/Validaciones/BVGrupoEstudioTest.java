@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package benedictoxvi.Logica;
+package benedictoxvi.Validaciones;
 
 import benedictoxvi.Entidades.Aula;
 import benedictoxvi.Entidades.GrupoEstudio;
@@ -21,9 +21,9 @@ import static org.junit.Assert.*;
  *
  * @author milton
  */
-public class BLGrupoEstudioTest {
+public class BVGrupoEstudioTest {
     
-    public BLGrupoEstudioTest() {
+    public BVGrupoEstudioTest() {
     }
     
     @BeforeClass
@@ -43,13 +43,13 @@ public class BLGrupoEstudioTest {
     }
 
     /**
-     * Test of BuscarGrupoEstudio method, of class BLGrupoEstudio.
+     * Test of BuscarGrupoEstudio method, of class BVGrupoEstudio.
      */
     @Test
     public void testBuscarGrupoEstudio() {
         System.out.println("BuscarGrupoEstudio");
         GrupoEstudio pGrupoEstudio = null;
-        BLGrupoEstudio instance = new BLGrupoEstudio();
+        BVGrupoEstudio instance = new BVGrupoEstudio();
         ArrayList expResult = null;
         ArrayList result = instance.BuscarGrupoEstudio(pGrupoEstudio);
         assertEquals(expResult, result);
@@ -58,7 +58,7 @@ public class BLGrupoEstudioTest {
     }
 
     /**
-     * Test of GuardarGrupoEstudio method, of class BLGrupoEstudio.
+     * Test of GuardarGrupoEstudio method, of class BVGrupoEstudio.
      */
     @Test
     public void testGuardarGrupoEstudio() {
@@ -74,12 +74,9 @@ public class BLGrupoEstudioTest {
         ArrayList<GrupoEstudioDetale> detalle = new ArrayList<GrupoEstudioDetale>();
         detalle.add(detalle1);
         
-        pGrupoEstudio.setDetalle(detalle);
-        
-        BLGrupoEstudio instance = new BLGrupoEstudio();
-        
-        
-        
+         pGrupoEstudio.setDetalle(detalle);
+         BVGrupoEstudio instance = new BVGrupoEstudio();
+               
         Result expResult = null;
         Result result = instance.GuardarGrupoEstudio(pGrupoEstudio);
         
@@ -92,20 +89,16 @@ public class BLGrupoEstudioTest {
         {
             fail(result.getMensaje());            
         }
-        
-        // TODO review the generated test code and remove the default call to fail.
-
-        
     }
 
     /**
-     * Test of ModificarGrupoEstudio method, of class BLGrupoEstudio.
+     * Test of ModificarGrupoEstudio method, of class BVGrupoEstudio.
      */
     @Test
     public void testModificarGrupoEstudio() {
         System.out.println("ModificarGrupoEstudio");
         GrupoEstudio pGrupoEstudio = null;
-        BLGrupoEstudio instance = new BLGrupoEstudio();
+        BVGrupoEstudio instance = new BVGrupoEstudio();
         Result expResult = null;
         Result result = instance.ModificarGrupoEstudio(pGrupoEstudio);
         assertEquals(expResult, result);
@@ -114,13 +107,13 @@ public class BLGrupoEstudioTest {
     }
 
     /**
-     * Test of EliminarGrupoEstudio method, of class BLGrupoEstudio.
+     * Test of EliminarGrupoEstudio method, of class BVGrupoEstudio.
      */
     @Test
     public void testEliminarGrupoEstudio() {
         System.out.println("EliminarGrupoEstudio");
         GrupoEstudio pGrupoEstudio = null;
-        BLGrupoEstudio instance = new BLGrupoEstudio();
+        BVGrupoEstudio instance = new BVGrupoEstudio();
         Result expResult = null;
         Result result = instance.EliminarGrupoEstudio(pGrupoEstudio);
         assertEquals(expResult, result);

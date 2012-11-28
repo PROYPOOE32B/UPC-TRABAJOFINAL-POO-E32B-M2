@@ -13,6 +13,21 @@ public class Curso {
     private String nombreCurso;
     private String syllabus;
 
+    
+     public Curso()
+     {
+         this.codigoCurso = "";
+         this.nombreCurso = "";
+         this.syllabus = "";
+     }
+             
+    public Curso(String pCodigo,String pnombreCurso, String pSyllabus)
+    {
+        this.codigoCurso = pCodigo;
+        this.nombreCurso = pnombreCurso;
+        this.syllabus = pSyllabus;
+    }
+    
     public String getCodigoCurso() {
         return codigoCurso;
     }

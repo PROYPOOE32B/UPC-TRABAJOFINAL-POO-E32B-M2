@@ -45,6 +45,4 @@ public class Local {
     public void setUbicacionGoogleMaps(String ubicacionGoogleMaps) {
         this.ubicacionGoogleMaps = ubicacionGoogleMaps;
     }
-    
-    
 }
