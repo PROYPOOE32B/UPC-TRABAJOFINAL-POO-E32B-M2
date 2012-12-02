@@ -13,21 +13,32 @@ import benedictoxvi.Util.Result;
 import benedictoxvi.Util.ResultType;
 import java.util.ArrayList;
 import java.util.List;  
+import benedictoxvi.Validaciones.BVGrupoEstudio;
 /**
  *
  * @author milton
  */
 public class BLGrupoEstudio {
    
+private BLGrupoEstudio bl = new BLGrupoEstudio();
+     
 public ArrayList<GrupoEstudio> BuscarGrupoEstudio(GrupoEstudio pGrupoEstudio)
 {
-    return null;
+    return bl.BuscarGrupoEstudio(pGrupoEstudio);
 }
 
 public Result GuardarGrupoEstudio(GrupoEstudio pGrupoEstudio)
 {
-    BDGrupoEstudio bd = new BDGrupoEstudio();
-    return bd.GuardarGrupoEstudio(pGrupoEstudio);    
+    Result rs = null;
+    BVGrupoEstudio bv = new BVGrupoEstudio();
+    rs = bv.ValidarGrupoEstudio(pGrupoEstudio);
+    
+    if(rs.getTipo() == ResultType.Error)
+    {
+       return rs;
+    }   
+    
+    return bl.GuardarGrupoEstudio(pGrupoEstudio); 
 }
 
 public Result ModificarGrupoEstudio(GrupoEstudio pGrupoEstudio)

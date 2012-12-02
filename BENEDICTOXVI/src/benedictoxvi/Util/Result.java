@@ -33,10 +33,15 @@ public class Result {
         this.tipo = pTipo;
     }
     
-        public void SetResult(ResultType pTipo, String pMensaje)
+    public void SetResult(ResultType pTipo, String pMensaje)
     {
         this.mensaje = pMensaje;
         this.detalleMensaje = "";
+        this.tipo = pTipo;
+    }
+    
+    public void SetResult(ResultType pTipo)
+    {
         this.tipo = pTipo;
     }
         

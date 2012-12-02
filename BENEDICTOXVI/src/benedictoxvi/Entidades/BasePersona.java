@@ -17,8 +17,11 @@ abstract class BasePersona {
     protected String nroDocumento;
     protected String tipoDocumento;
     protected String estadoCivil;
-    protected boolean estado;
-
+    protected boolean estado;  
+    protected String email;
+    protected String telefono;
+    
+    
     public BasePersona()
     {}
     
@@ -54,6 +57,16 @@ abstract class BasePersona {
         this.apellidoPaterno = apellidoPaterno;
     }
 
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
+    }
+    
+    
+
     public String getSexo() {
         return sexo;
     }
@@ -86,7 +99,23 @@ abstract class BasePersona {
         this.estadoCivil = estadoCivil;
     }
 
-    public boolean isEstado() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    
+     public boolean isEstado() {
         return estado;
     }
 

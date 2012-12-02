@@ -20,7 +20,12 @@ public class BDGrupoEstudio {
     
 public ArrayList<GrupoEstudio> BuscarGrupoEstudio(GrupoEstudio pGrupoEstudio)
 {
+    
+    
     ArrayList<GrupoEstudio> list = new ArrayList<GrupoEstudio>();
+    
+    GrupoEstudio grupoEstudio1 = new GrupoEstudio();
+    
     Connection con = new BaseConeccion().getConnection();    
     //Statement stm = con.createStatement();
 

@@ -4,10 +4,8 @@
  */
 package benedictoxvi.Validaciones;
 
-import benedictoxvi.Datos.BDGrupoEstudio;
 import benedictoxvi.Entidades.GrupoEstudio;
 import benedictoxvi.Entidades.GrupoEstudioDetale;
-import benedictoxvi.Logica.BLGrupoEstudio;
 import benedictoxvi.Util.Common;
 import benedictoxvi.Util.Result;
 import benedictoxvi.Util.ResultType;
@@ -19,15 +17,10 @@ import java.util.ArrayList;
  */
 public class BVGrupoEstudio {
        
-public ArrayList<GrupoEstudio> BuscarGrupoEstudio(GrupoEstudio pGrupoEstudio)
-{
-    return null;
-}
 
-public Result GuardarGrupoEstudio(GrupoEstudio pGrupoEstudio)
+public Result ValidarGrupoEstudio(GrupoEstudio pGrupoEstudio)
 {
-
-        StringBuilder sb = new StringBuilder();
+    StringBuilder sb = new StringBuilder();
     Result rs = new Result();
     
     sb.append(Common.IsNullOrEmpty(pGrupoEstudio.getNombre())? "nombre inválido,": "");
@@ -88,21 +81,13 @@ public Result GuardarGrupoEstudio(GrupoEstudio pGrupoEstudio)
         rs.SetResult(ResultType.Error, sb.toString());
         return rs;
     }
+    else
+    {
+        rs.SetResult(ResultType.Ok);
+        return rs;
+    }
     
-    BLGrupoEstudio bl = new BLGrupoEstudio();
-    return bl.GuardarGrupoEstudio(pGrupoEstudio) ;
 }
 
-public Result ModificarGrupoEstudio(GrupoEstudio pGrupoEstudio)
-{
-     BLGrupoEstudio bl = new BLGrupoEstudio();
-    return bl.ModificarGrupoEstudio(pGrupoEstudio) ;
-}
-
-public Result EliminarGrupoEstudio(GrupoEstudio pGrupoEstudio)
-{
-    BLGrupoEstudio bl = new BLGrupoEstudio();
-    return bl.EliminarGrupoEstudio(pGrupoEstudio) ;
-}
 
 }
