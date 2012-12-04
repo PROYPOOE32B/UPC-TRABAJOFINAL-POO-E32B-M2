@@ -11,8 +11,7 @@ import benedictoxvi.Entidades.Instructor;
 import benedictoxvi.Util.Common;
 import benedictoxvi.Util.Result;
 import benedictoxvi.Util.ResultType;
-import java.util.ArrayList;
-import java.util.List;  
+import java.util.ArrayList; 
 import benedictoxvi.Validaciones.BVGrupoEstudio;
 /**
  *
@@ -20,11 +19,19 @@ import benedictoxvi.Validaciones.BVGrupoEstudio;
  */
 public class BLGrupoEstudio {
    
-private BLGrupoEstudio bl = new BLGrupoEstudio();
+private BDGrupoEstudio bd = new BDGrupoEstudio();
      
 public ArrayList<GrupoEstudio> BuscarGrupoEstudio(GrupoEstudio pGrupoEstudio)
 {
-    return bl.BuscarGrupoEstudio(pGrupoEstudio);
+    try
+    {
+        return bd.BuscarGrupoEstudio(pGrupoEstudio);        
+    }
+    catch(Exception ex)
+    {
+        return null;
+    }
+
 }
 
 public Result GuardarGrupoEstudio(GrupoEstudio pGrupoEstudio)
@@ -38,7 +45,7 @@ public Result GuardarGrupoEstudio(GrupoEstudio pGrupoEstudio)
        return rs;
     }   
     
-    return bl.GuardarGrupoEstudio(pGrupoEstudio); 
+    return bd.GuardarGrupoEstudio(pGrupoEstudio); 
 }
 
 public Result ModificarGrupoEstudio(GrupoEstudio pGrupoEstudio)

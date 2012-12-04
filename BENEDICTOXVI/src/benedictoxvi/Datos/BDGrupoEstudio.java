@@ -4,12 +4,23 @@
  */
 package benedictoxvi.Datos;
 
+import benedictoxvi.Entidades.Curso;
 import benedictoxvi.Entidades.GrupoEstudio;
+import benedictoxvi.Util.Constantes;
 import benedictoxvi.Util.Result;
 import benedictoxvi.Util.ResultType;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
+import net.sf.json.JSON;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JSONSerializer;
+ 
+ 
 
 /**
  *
@@ -18,18 +29,24 @@ import java.util.ArrayList;
 public class BDGrupoEstudio {
     
     
-public ArrayList<GrupoEstudio> BuscarGrupoEstudio(GrupoEstudio pGrupoEstudio)
+public ArrayList<GrupoEstudio> BuscarGrupoEstudio(GrupoEstudio pGrupoEstudio) throws FileNotFoundException
 {
-    
-    
-    ArrayList<GrupoEstudio> list = new ArrayList<GrupoEstudio>();
-    
-    GrupoEstudio grupoEstudio1 = new GrupoEstudio();
-    
-    Connection con = new BaseConeccion().getConnection();    
-    //Statement stm = con.createStatement();
+    try
+    {    
+        GrupoEstudio grupoEstudio1 = new GrupoEstudio();
+        grupoEstudio1.setCodigoGrupoEstudio(1);
+        grupoEstudio1.setDescripcion("Inteligencia de Negocios");
+        grupoEstudio1.setDetalle(null);
+        Connection con = new BaseConeccion().getConnection();    
+        //Statement stm = con.createStatement();
 
-    return list;
+        return null;
+    }
+    catch(Exception ex)
+    {
+        return null;
+    }
+
 }
 
 public Result GuardarGrupoEstudio(GrupoEstudio pGrupoEstudio)
