@@ -14,10 +14,21 @@ import java.util.Date;
 public class Usuario extends BasePersona {
     private String usuario;
     private String contrasenha;
+    private String confirmContrasenha;
     private Date fechaIngreso;
+    private String cargo;
     private String descripcionCargo;
-    private ArrayList<Rol> roles;
+    private Rol rol;
 
+    public Usuario()
+    {
+        super();
+    }
+    public Usuario(int pCodigo, String pUsuario)
+    {
+        this.usuario = pUsuario;
+        this.codigo = pCodigo;
+    }
     public String getUsuario() {
         return usuario;
     }
@@ -30,6 +41,14 @@ public class Usuario extends BasePersona {
         return contrasenha;
     }
 
+    public String getConfirmContrasenha() {
+        return confirmContrasenha;
+    }
+
+    public void setConfirmContrasenha(String confirmContrasenha) {
+        this.confirmContrasenha = confirmContrasenha;
+    }
+    
     public void setContrasenha(String contrasenha) {
         this.contrasenha = contrasenha;
     }
@@ -38,6 +57,14 @@ public class Usuario extends BasePersona {
         return fechaIngreso;
     }
 
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    
     public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
@@ -50,12 +77,12 @@ public class Usuario extends BasePersona {
         this.descripcionCargo = descripcionCargo;
     }
 
-    public ArrayList<Rol> getRoles() {
-        return roles;
+    public Rol getRol() {
+        return rol;
     }
 
-    public void setRoles(ArrayList<Rol> roles) {
-        this.roles = roles;
+    public void setRol(Rol roles) {
+        this.rol = roles;
     }
     
 }
