@@ -116,7 +116,7 @@ public class BLUsuarioTest {
         System.out.println("EliminarUsuario");
         Usuario pusuario = new Usuario();
         pusuario.setCodigo(1);
-        pusuario.setUsuario("MEstrada");
+        //pusuario.setUsuario("MSantiago");
         
         BLUsuario instance = new BLUsuario();
         Result expResult = new Result(ResultType.Ok, "Usuario eliminado correctamente.", null);
@@ -142,7 +142,11 @@ public class BLUsuarioTest {
         Usuario result = instance.BuscarUsuarios(pusuario);        
         if(result == null) fail("La busqueda no ha retornado resultado.");
         else
+        {
             assertEquals(pusuario.getUsuario(),result.getUsuario());
+            System.out.println("Se encontró el usuario.");
+        }
+
         
     }
 
@@ -152,12 +156,14 @@ public class BLUsuarioTest {
     @Test
     public void testExisteUsuario() {
         System.out.println("ValidarUsuario");
-        Usuario pusuario = null;
+        Usuario pusuario = new Usuario();        
+        pusuario.setUsuario("cvilchez");
+        
         BLUsuario instance = new BLUsuario();
         boolean expResult = false;
         boolean result = instance.ExisteUsuario(pusuario);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Existe usuario: " + result);
+        assertEquals(expResult , result ); 
+        
     }
 }

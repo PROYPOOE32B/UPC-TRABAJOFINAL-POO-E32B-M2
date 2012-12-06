@@ -3,16 +3,12 @@ package benedictoxvi.Logica;
 
 import benedictoxvi.Datos.*;
 import benedictoxvi.Entidades.*;
+import benedictoxvi.Util.Result;
+import benedictoxvi.Util.ResultType;
 import benedictoxvi.Validaciones.*;
 
 
 public class BLClientes {
-    
- 
-    public BLClientes() {
-
-    }
-    
     
     private BDCliente ObjClientes = new BDCliente();
     private BVCliente  BVValidacion = new BVCliente();
@@ -24,43 +20,40 @@ public class BLClientes {
     }
 
     public String GrabarCliente(Clientes BEEntidades){
-        String CampoValidado =  BVValidacion.ValidarCampo(BEEntidades);
-        if ("".equals(CampoValidado)){
-            Resultado =  ObjClientes.GrabarCliente(BEEntidades);
+        Result r =  BVValidacion.ValidarCampo(BEEntidades);
+        if (r.getTipo().equals(ResultType.Ok)){
+            return ObjClientes.GrabarCliente(BEEntidades);
         }
-        return Resultado;
+        else
+         return r.getMensaje() + r.getDetalleMensaje();
     }
 
     public String EliminarCliente(Clientes BEEntidades)
     {
-        String CampoValidado =  BVValidacion.ValidarCampo(BEEntidades);
-        if ("".equals(CampoValidado)){
-        Resultado =  ObjClientes.EliminarCliente(BEEntidades);
+        Result r =  BVValidacion.ValidarCampo(BEEntidades);
+        if (r.getTipo().equals(ResultType.Ok)){
+          return  ObjClientes.EliminarCliente(BEEntidades);
         }
-        return Resultado;
+        else
+          return r.getMensaje() + r.getDetalleMensaje();
     }
     
     public String ConvertirAProspecto(Clientes BEEntidades){
-        String CampoValidado =  BVValidacion.ValidarCampo(BEEntidades);
-        if ("".equals(CampoValidado)){
-            
-        Resultado =  ObjClientes.ConvertirAProspecto(BEEntidades);
-        
+        Result r =  BVValidacion.ValidarCampo(BEEntidades);
+        if (r.getTipo().equals(ResultType.Ok)){
+        return ObjClientes.ConvertirAProspecto(BEEntidades);
         }
-        
-        return Resultado;
+        else
+         return r.getMensaje() + r.getDetalleMensaje();
     }
     
     public String LeerProspecto(Clientes BEEntidades){
-        String CampoValidado =  BVValidacion.ValidarCampo(BEEntidades);
-        if ("".equals(CampoValidado)){
-            
-        Resultado =  ObjClientes.LeerProspecto(BEEntidades);
-        
-        }
-        
-        return Resultado;
-        
+       Result r =  BVValidacion.ValidarCampo(BEEntidades);
+        if (r.getTipo().equals(ResultType.Ok)){         
+            return ObjClientes.LeerProspecto(BEEntidades);       
+        }        
+        else
+         return r.getMensaje() + r.getDetalleMensaje();
         
     }
     

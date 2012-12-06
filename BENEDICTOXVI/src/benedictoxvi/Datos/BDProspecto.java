@@ -13,8 +13,7 @@ import benedictoxvi.Util.ResultType;
  * @author JOHN
  */
 public class BDProspecto {
-    
-    
+        
     public String BuscarProspecto(Prospecto BEEntidades){
         return new Result(ResultType.Ok, "Datos grabados correctamente.", "").getMensaje();
     }

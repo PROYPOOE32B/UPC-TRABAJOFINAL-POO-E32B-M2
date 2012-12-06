@@ -49,7 +49,7 @@ public class BDUsuario {
     {
         boolean existe = false;
         ArrayList<Usuario> list = new ArrayList<Usuario>();
-        list.add(new Usuario(1, "MSantiago"));
+        //list.add(new Usuario(1, "MSantiago"));
         list.add(new Usuario(2, "RMarquezma"));
         list.add(new Usuario(3, "LupeGonzales"));
        

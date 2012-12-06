@@ -12,7 +12,7 @@ public class BVCliente {
     StringBuilder sb = new StringBuilder();
     public BVCliente() {
     }
-    public String ValidarCampo(Clientes BEEntidades){
+    public Result ValidarCampo(Clientes BEEntidades){
             // Nombre, ApellidosPaterno, ApellidoMaterno, Email, NroDocumento, Telefono
         sb.append(Common.IsNullOrEmpty(BEEntidades.getNombre())? "nombre inválido,": "");
         sb.append(Common.IsNullOrEmpty(BEEntidades.getApellidoPaterno())? "nombre inválido,": "");
@@ -21,7 +21,8 @@ public class BVCliente {
         sb.append(Common.IsNullOrEmpty(BEEntidades.getNroDocumento())? "nombre inválido,": "");
         //
         sb.append(Common.IsNullOrEmpty(BEEntidades.getFechaContacto())? "nombre inválido,": "");
-        rs.SetResult(ResultType.Advertencia, "Error de campo", sb.toString());
-        return rs.toString();
+        
+        if(sb.length() <= 0) return new Result(ResultType.Ok, "datos correctos", null);
+        else return new Result(ResultType.Error, "datos incorrectos", sb.toString());        
     }
 }
