@@ -14,6 +14,13 @@ public class Local {
     private String direccion;
     private String ubicacionGoogleMaps;
 
+    public Local(int pCodigoLocal, String pnombre, String pDireccion, String pUbicacionGoogleMaps)
+    {
+        this.codigoLocal = pCodigoLocal;
+        this.nombre = pnombre;
+        this.direccion = pDireccion;
+        this.ubicacionGoogleMaps = pUbicacionGoogleMaps;
+    }
     public int getCodigoLocal() {
         return codigoLocal;
     }

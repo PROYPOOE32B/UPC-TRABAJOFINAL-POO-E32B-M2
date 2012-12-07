@@ -53,7 +53,40 @@ public Result ModificarGrupoEstudio(GrupoEstudio pGrupoEstudio)
 
 public Result EliminarGrupoEstudio(GrupoEstudio pGrupoEstudio)
 {
-    return new Result(ResultType.Ok, "Datos eliminados correctamente.", "");
+     GrupoEstudio ge1 = new GrupoEstudio();     
+     ge1.setCodigoGrupoEstudio(1);
+        
+     GrupoEstudio ge2 = new GrupoEstudio(); 
+     ge2.setCodigoGrupoEstudio(2);
+     
+     GrupoEstudio ge3 = new GrupoEstudio();     
+     ge3.setCodigoGrupoEstudio(3);
+               
+     ArrayList<GrupoEstudio> gp = new ArrayList<GrupoEstudio>();
+     gp.add(ge1);
+     gp.add(ge2);
+     gp.add(ge3);
+     
+       int indexItem = -1; 
+        for(int index=0; index < gp.size(); index++)
+        {
+            if(gp.get(index).getCodigoGrupoEstudio() == pGrupoEstudio.getCodigoGrupoEstudio())
+            {
+                indexItem = index;
+                break;
+            }
+        }
+        
+        if (indexItem > -1)
+        {
+            gp.remove(indexItem);
+            return new Result(ResultType.Ok, "Grupo de estudio eliminado correctamente.", null);            
+        }
+        else
+        {
+           return new Result(ResultType.Ok, "No se encontró el grupo de estudio solicitado..", null);   
+        }
+
 }
 
 }
